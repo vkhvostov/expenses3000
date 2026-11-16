@@ -1,4 +1,4 @@
-# Configures metric collection, alert rule loading and delivery to Alertmanager.
+# Configures metric collection and alert rule evaluation without external notifications.
 global:
   scrape_interval: 15s
   scrape_timeout: 10s
@@ -6,12 +6,6 @@ global:
 
 rule_files:
   - /etc/prometheus/alerts.yml
-
-alerting:
-  alertmanagers:
-    - static_configs:
-        - targets:
-            - alertmanager:9093
 
 scrape_configs:
   - job_name: backend

@@ -43,7 +43,7 @@ Major technologies and their purpose are listed below; exact dependency versions
 | Visualization | Recharts 3 | Interactive financial charts with table alternatives. |
 | Development and verification | Docker Compose v2, Make, GitHub Actions, Vitest, Bruno, Playwright/axe, ESLint and Prettier | Repeatable services and automated code, API and browser checks. |
 | HTTPS | Nginx, mkcert | One trusted HTTPS entry point with internal-only application ports. |
-| Monitoring | prom-client, Prometheus, Grafana, Alertmanager and Telegram | Collect metrics, visualize service health and send operational alerts to Telegram. |
+| Monitoring | prom-client, Prometheus and Grafana | Collect metrics, visualize service health and evaluate operational alert rules without external notifications. |
 
 ## Instructions
 
@@ -105,7 +105,7 @@ When switching from the full stack to development mode, run `make down` first.
 6. Open https://localhost:3000 (restart your browser after certificate setup); Grafana is at https://localhost:3002 (login required).
 
 If a service does not become healthy, run `make logs` to inspect startup errors.
-The root `.env` is required for monitoring; Google sign-in, 2FA and Telegram delivery use the optional settings below.
+The root `.env` is required for monitoring; Google sign-in and 2FA use the optional settings below.
 
 ### Environment Setup
 
@@ -123,7 +123,7 @@ GRAFANA_ADMIN_USER=<grafana-admin-username>
 GRAFANA_ADMIN_PASSWORD=<grafana-admin-password>
 ```
 
-See the [monitoring setup](docs/monitoring.md#setup) for password generation, database initialization and Telegram secrets.
+See the [monitoring setup](docs/monitoring.md#setup) for password generation and database initialization.
 
 #### Host development
 
@@ -298,7 +298,7 @@ See [schema.ts](backend/srcs/db/schema.ts) for all columns and constraints.
 | Localization and themes | UI: EN/DE/FA/UK, Persian RTL, responsive layouts and light/dark themes. |
 | Accessibility and design system | UI: keyboard/screen-reader support and themed components; `/design-system` showcase. |
 | Operations | Status UI/API, health checks, database/avatar backups and restore procedure. |
-| Monitoring | Internal metrics, Grafana dashboards and alerts with optional Telegram delivery. |
+| Monitoring | Internal metrics, Grafana dashboards and alerts without external notifications. |
 | Legal information | Public `/privacy` and `/terms` pages. |
 | Development checks | CI: code, API, build and browser checks. |
 
@@ -322,6 +322,6 @@ Detailed endpoint contracts and archived-account restrictions are in the [API re
 | API guide | [Endpoints, validation and request examples](docs/api.md). |
 | Development guide | [Host development, migrations, Docker commands and troubleshooting](docs/development.md). |
 | Testing guide | [Local checks, API/browser tests and CI](docs/testing.md). |
-| Monitoring guide | [Setup, metrics, alerts and Telegram delivery](docs/monitoring.md). |
+| Monitoring guide | [Setup, metrics and alerts](docs/monitoring.md). |
 | Design system | Open `/design-system` for the live component showcase; shared components are in `frontend/components/ui/`. |
 | Existing project guides | [Bruno API checks](backend/bruno/README.md), [disaster recovery](docs/disaster-recovery.md). |

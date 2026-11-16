@@ -164,7 +164,7 @@ services:
       - ./monitoring:/etc/prometheus:ro
       - prometheus-data:/prometheus
 
-  # Receives Prometheus alerts; the Telegram Compose file enables external messages.
+  # Groups Prometheus alerts without sending external notifications.
   alertmanager:
     image: prom/alertmanager:v0.34.2
     restart: unless-stopped

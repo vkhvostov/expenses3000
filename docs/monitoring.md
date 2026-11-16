@@ -25,13 +25,13 @@ Run commands from the repository root; `make up` starts monitoring, while `make 
 
 Nginx terminates HTTPS on the loopback-only host port 3002 and forwards requests to Grafana over the internal Docker network. Grafana has no direct host port and uses secure login cookies. Plain HTTP on port 3002 redirects to HTTPS. The existing mkcert certificate also covers this endpoint.
 
-Prometheus, Alertmanager, exporters and backend metrics stay inside Docker; do not expose their unauthenticated ports.
+Prometheus, exporters and backend metrics stay inside Docker; do not expose their unauthenticated ports.
 Dashboard files are in `monitoring/grafana/`; alert rules are in `monitoring/alerts.yml`.
-Alertmanager groups alerts without sending external notifications; inspect alert state in Grafana.
+Prometheus evaluates alert rules without sending external notifications; inspect alert state in Grafana.
 
 ## Verify alerts
 
-- Run `sh scripts/monitoring.check.sh` to validate the Compose, Prometheus and Alertmanager configurations
+- Run `sh scripts/monitoring.check.sh` to validate the Compose and Prometheus configurations, including alert rules
 - Open Grafana in a private browser window and confirm login is required
 - Run `NODE_EXTRA_CA_CERTS=nginx/certs/ca/rootCA.pem node scripts/grafana-https.check.mjs` against the running full stack to check HTTPS, the HTTP redirect and blocked anonymous API access
 - In Grafana Explore, check `up{job="backend"}` and `pg_up{job="postgres-exporter"}` both return `1`

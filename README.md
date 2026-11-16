@@ -43,7 +43,7 @@ Major technologies and their purpose are listed below; exact dependency versions
 | Visualization | Recharts 3 | Interactive financial charts with table alternatives. |
 | Development and verification | Docker Compose v2, Make, GitHub Actions, Vitest, Bruno, Playwright/axe, ESLint and Prettier | Repeatable services and automated code, API and browser checks. |
 | HTTPS | Nginx, mkcert | One trusted HTTPS entry point with internal-only application ports. |
-| Monitoring | prom-client, Prometheus, Grafana and Alertmanager | Collect metrics, visualize service health and group operational alerts without external notifications. |
+| Monitoring | prom-client, Prometheus and Grafana | Collect metrics, visualize service health and evaluate operational alert rules without external notifications. |
 
 ## Instructions
 

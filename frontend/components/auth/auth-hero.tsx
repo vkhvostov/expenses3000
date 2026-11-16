@@ -9,9 +9,9 @@ function AuthHero({ title, description, children }: { title: string; description
     <div className="flex w-full flex-col bg-(image:--grad-panel) p-12 text-white">
       <Link href="/" className="flex items-center gap-2.5 font-bold hover:opacity-80">
         <span className="flex size-[34px] items-center justify-center rounded-[9px] border-[1.5px] border-white/40">
-          P
+          E
         </span>
-        <span className="text-lg">Poolaki</span>
+        <span className="text-lg">expenses3000</span>
       </Link>
       <div className="mt-auto">
         <h2 className="mb-4 text-4xl leading-[1.12] font-bold tracking-[-0.02em]">{title}</h2>

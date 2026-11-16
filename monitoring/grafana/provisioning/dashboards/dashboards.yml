@@ -4,7 +4,7 @@ apiVersion: 1
 providers:
   - name: expense-tracker
     orgId: 1
-    folder: Poolaki
+    folder: expenses3000
     type: file
     disableDeletion: false
     allowUiUpdates: false

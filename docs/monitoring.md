@@ -1,4 +1,4 @@
-# Poolaki monitoring
+# expenses3000 monitoring
 
 Run commands from the repository root; `make up` starts monitoring, while `make dev` does not.
 
@@ -54,7 +54,7 @@ Never commit `.env` or `.secrets/`.
 | Resource | Location |
 |---|---|
 | Grafana | https://localhost:3002; sign in with the credentials from `.env` |
-| Dashboards | Poolaki → Backend-Dashboard / Database-Dashboard |
+| Dashboards | expenses3000 → Backend-Dashboard / Database-Dashboard |
 | Alerts | https://localhost:3002/alerting/list |
 
 Nginx terminates HTTPS on the loopback-only host port 3002 and forwards requests to Grafana over the internal Docker network. Grafana has no direct host port and uses secure login cookies. Plain HTTP on port 3002 redirects to HTTPS. The existing mkcert certificate also covers this endpoint.

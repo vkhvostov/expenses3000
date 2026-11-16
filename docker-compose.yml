@@ -73,7 +73,7 @@ services:
     build:
       context: ./frontend
 
-    # next dev writes into ./frontend (next-env.d.ts). Under rootless Docker (42 computers) only
+    # next dev writes into ./frontend (next-env.d.ts); root maps to the host user under rootless Docker.
     user: root
 
     volumes:

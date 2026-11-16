@@ -1,8 +1,8 @@
-*This project has been created as part of the 42 curriculum by vkhvosto, dbilenko, lkramer, gansari.*
+# expenses3000
 
-# Poolaki
+expenses3000 is a personal expense tracker for managing accounts, transactions and financial insights.
 
-Poolaki is a personal expense tracker developed as the final team project of the 42 curriculum.
+Forked from an educational project.
 
 ## Description
 
@@ -17,8 +17,6 @@ Poolaki is a personal expense tracker developed as the final team project of the
 ## Table of Contents
 
 - [Description](#description)
-- [Team Information](#team-information)
-- [Project Management](#project-management)
 - [Technical Stack](#technical-stack)
 - [Instructions](#instructions)
   - [Prerequisites](#prerequisites)
@@ -28,31 +26,7 @@ Poolaki is a personal expense tracker developed as the final team project of the
   - [Testing and CI](#testing-and-ci)
 - [Database Schema](#database-schema)
 - [Features List](#features-list)
-- [Modules](#modules)
 - [Resources](#resources)
-- [Individual Contributions](#individual-contributions)
-
-## Team Information
-
-| 42 login | Assigned roles | Responsibilities |
-|---|---|---|
-| vkhvosto | Technical Lead / Architect, Developer | Architecture, technology choices, code quality and critical reviews. |
-| dbilenko | Developer | Shared developer responsibilities below. |
-| lkramer | Scrum Master, Developer | Team coordination, meetings, progress tracking, communication and blockers. |
-| gansari | Product Owner, Developer | Product vision, backlog priorities and validation of completed work. |
-
-All four members contribute to implementation, code reviews, testing and documentation.
-
-## Project Management
-
-| Area | Organization |
-|---|---|
-| Work tracking | GitHub Kanban board. |
-| Tasks | GitHub Issues grouped into milestones. |
-| Assignment | Each team member assigned themselves to issues. |
-| Meetings and coordination | A weekly remote meeting with actions to discuss. |
-| Communication | Telegram and Google. |
-| Reviews and completion | Changes were submitted through GitHub pull requests and reviewed by another team member, issues were marked complete once acceptance criteria were met, checks passed and changes were merged. |
 
 ## Technical Stack
 
@@ -99,8 +73,8 @@ When switching from the full stack to development mode, run `make down` first.
 1. Clone the repository and enter its directory:
 
    ```bash
-   git clone https://github.com/LaraKraemer/poolaki.git
-   cd poolaki
+   git clone https://github.com/vkhvostov/expenses3000.git
+   cd expenses3000
    ```
 
 2. Replace the database, monitoring and Grafana placeholders in the root `.env`, creating it first if needed:
@@ -189,7 +163,7 @@ See the [host development setup](docs/development.md#running-without-docker).
 
 ### Testing and CI
 
-During development, we added GitHub Actions pipelines to automate backend type checking, linting, formatting, unit and API tests, plus frontend linting, self-checks, builds, and browser accessibility and status-page checks.
+GitHub Actions pipelines automate backend type checking, linting, formatting, unit and API tests, plus frontend linting, self-checks, builds, and browser accessibility and status-page checks.
 
 | Run inside | Main checks after `npm ci` |
 |---|---|
@@ -305,67 +279,30 @@ See [schema.ts](backend/srcs/db/schema.ts) for all columns and constraints.
 
 ## Features List
 
-Contributors reflect commit authorship and co-authorship; team review can add unrecorded work.
-
-| Implemented feature | Availability and behavior | Contributors |
-|---|---|---|
-| Authentication | UI + API: register, sign in/out, change passwords and manage sessions. | lkramer, vkhvosto, gansari |
-| Friends and online status | UI + API: friend requests and online status based on the last ten minutes of activity. | vkhvosto |
-| Google sign-in | UI + API: Google login and protected account linking. | gansari, vkhvosto |
-| Two-factor authentication | UI + API: authenticator codes and single-use recovery codes for password/Google login. | vkhvosto |
-| Profiles and avatars | UI + API: edit name, preview/manage photo, initials fallback and delete profile. | vkhvosto, dbilenko, lkramer, gansari |
-| Accounts | UI + API: create/edit/delete accounts, opening balances, currencies, balances and archive/restore. | lkramer, vkhvosto, dbilenko, gansari |
-| Categories | UI + API: manage categories, icons, colors, allowed types and usage counts. | lkramer, vkhvosto, dbilenko, gansari |
-| Transactions | UI + API: categorized income/expenses and linked multi-currency transfers; merchant is API-only. | lkramer, vkhvosto, dbilenko, gansari |
-| Search and filtering | UI + API: search, filters, sorting and pagination; UI filters saved in the URL. | lkramer, gansari |
-| Dashboard | UI + API: balances, recent transactions and monthly summaries. | gansari, lkramer, vkhvosto |
-| Analytics | UI + API: per-currency charts/tables, filters and 30-second visible-tab refresh. | vkhvosto, dbilenko |
-| Export | UI + API: filtered CSV; UI: browser print/save-as-PDF. | vkhvosto, dbilenko |
-| JSON import | UI + API: bulk import with validation, preview and category matching. | lkramer |
-| Currency catalog | API used by UI: 17 currencies; no exchange-rate conversion. | vkhvosto, lkramer |
-| Localization and themes | UI: EN/DE/FA/UK, Persian RTL, responsive layouts and light/dark themes. | gansari, dbilenko, vkhvosto, lkramer |
-| Accessibility and design system | UI: keyboard/screen-reader support and themed components; `/design-system` showcase. | dbilenko, gansari, lkramer |
-| Operations | Status UI/API, health checks, database/avatar backups and restore procedure. | lkramer |
-| Monitoring | Internal metrics, Grafana dashboards and alerts with optional Telegram delivery. | lkramer |
-| Legal information | Public `/privacy` and `/terms` pages. | gansari |
-| Development checks | CI: code, API, build and browser checks. | vkhvosto, lkramer, dbilenko, gansari |
+| Implemented feature | Availability and behavior |
+|---|---|
+| Authentication | UI + API: register, sign in/out, change passwords and manage sessions. |
+| Friends and online status | UI + API: friend requests and online status based on the last ten minutes of activity. |
+| Google sign-in | UI + API: Google login and protected account linking. |
+| Two-factor authentication | UI + API: authenticator codes and single-use recovery codes for password/Google login. |
+| Profiles and avatars | UI + API: edit name, preview/manage photo, initials fallback and delete profile. |
+| Accounts | UI + API: create/edit/delete accounts, opening balances, currencies, balances and archive/restore. |
+| Categories | UI + API: manage categories, icons, colors, allowed types and usage counts. |
+| Transactions | UI + API: categorized income/expenses and linked multi-currency transfers; merchant is API-only. |
+| Search and filtering | UI + API: search, filters, sorting and pagination; UI filters saved in the URL. |
+| Dashboard | UI + API: balances, recent transactions and monthly summaries. |
+| Analytics | UI + API: per-currency charts/tables, filters and 30-second visible-tab refresh. |
+| Export | UI + API: filtered CSV; UI: browser print/save-as-PDF. |
+| JSON import | UI + API: bulk import with validation, preview and category matching. |
+| Currency catalog | API used by UI: 17 currencies; no exchange-rate conversion. |
+| Localization and themes | UI: EN/DE/FA/UK, Persian RTL, responsive layouts and light/dark themes. |
+| Accessibility and design system | UI: keyboard/screen-reader support and themed components; `/design-system` showcase. |
+| Operations | Status UI/API, health checks, database/avatar backups and restore procedure. |
+| Monitoring | Internal metrics, Grafana dashboards and alerts with optional Telegram delivery. |
+| Legal information | Public `/privacy` and `/terms` pages. |
+| Development checks | CI: code, API, build and browser checks. |
 
 Detailed endpoint contracts and archived-account restrictions are in the [API reference](docs/api.md).
-
-## Modules
-
-Subject v21.1 requires 14 points: Major = 2, Minor = 1; final credit depends on evaluation.
-
-### Major modules
-
-| Category | Module | Points | Implementation | Contributors |
-| --- | --- | --- | --- | --- |
-| Web | Frameworks for frontend and backend | 2 | Next.js/React UI and Express API provide structured full-stack development. | lkramer, vkhvosto, gansari, dbilenko |
-| Accessibility and Internationalization | Complete WCAG 2.1 AA accessibility | 2 | Keyboard/screen-reader support, contrast and reflow checks; [audit](docs/accessibility.md). | dbilenko, gansari, lkramer |
-| User Management | Standard user management and authentication | 2 | Login, editable profiles, avatars, friends and approximate online status. | lkramer, vkhvosto, dbilenko, gansari |
-| Devops | Monitoring with Prometheus and Grafana | 2 | Exporters, provisioned dashboards and alerts track service health; Grafana requires login. | lkramer |
-| Data and Analytics | Advanced analytics dashboard | 2 | Per-currency charts, filters, CSV/PDF printing and 30-second visible-tab updates. | vkhvosto, dbilenko |
-
-### Minor modules
-
-| Category | Module | Points | Implementation | Contributors |
-| --- | --- | --- | --- | --- |
-| Web | Database ORM | 1 | Drizzle provides typed queries and PostgreSQL migrations. | lkramer, vkhvosto, dbilenko, gansari |
-| Web | Custom design system | 1 | 10+ reusable components, theme colors, typography and icons; `/design-system` showcase. | gansari, dbilenko, lkramer |
-| Web | Advanced search | 1 | Transaction search, combined filters, sorting and pagination saved in the URL. | lkramer, gansari |
-| Web | File upload and management | 1 | Validated JPEG/PNG avatars with private storage, preview, progress and deletion; JSON import with preview. | vkhvosto, dbilenko, lkramer |
-| Accessibility and Internationalization | Multiple languages | 1 | English, German, Persian and Ukrainian with a language switcher. | gansari, dbilenko, vkhvosto, lkramer |
-| Accessibility and Internationalization | RTL support | 1 | Mirrored Persian layouts and directional controls. | gansari, dbilenko, lkramer |
-| User Management | Remote OAuth authentication | 1 | Google login with state/PKCE and protected account linking. | gansari, vkhvosto |
-| User Management | Two-factor authentication | 1 | TOTP for password/Google login, encrypted secrets, recovery codes and rate limits. | vkhvosto |
-| Devops | Health checks, status page, backups and disaster recovery | 1 | Health/status endpoints, database/avatar backups and restore instructions. | lkramer |
-
-### Point calculation
-
-| Scope | Calculation | Points |
-|---|---|---|
-| **Implemented project total, subject to evaluation** | **5 Major × 2 + 9 Minor × 1** | **19** |
-
 
 ## Resources
 
@@ -388,19 +325,3 @@ Subject v21.1 requires 14 points: Major = 2, Minor = 1; final credit depends on 
 | Monitoring guide | [Setup, metrics, alerts and Telegram delivery](docs/monitoring.md). |
 | Design system | Open `/design-system` for the live component showcase; shared components are in `frontend/components/ui/`. |
 | Existing project guides | [Bruno API checks](backend/bruno/README.md), [disaster recovery](docs/disaster-recovery.md). |
-| Evaluation subject | Supplied ft_transcendence **v21.1**, chapter IV (modules) and chapter VI (README). PDF not committed to the repository. |
-
-### AI usage
-
-AI was used for concept development, schema brainstorming, documentation, code reviews, debugging, code explanations and implementation suggestions. It helped explore alternative approaches and identify potential issues during development. 
-
-## Individual Contributions
-
-Implementation contributions are listed in the [feature](#features-list) and [module](#modules) tables above.
-
-| 42 login | Challenge | Resolution |
-|---|---|---|
-| vkhvosto | Keeping financial calculations accurate across currencies and transfers. | Store integer minor units, separate currency totals and test transfer/reporting rules. |
-| dbilenko | Making forms, dialogs and charts usable with keyboards, screen readers and narrow screens. | Improve focus handling, labels, contrast and layout; add chart tables and accessibility checks. |
-| lkramer | Keeping Docker dependencies consistent and recovering database/avatar data reliably. | Rebuild dependency volumes, automate backups and verify restoration through a recovery drill. |
-| gansari | Keeping transaction filters, pagination and displayed results synchronized. | Store filters in the URL, reset pagination when filters change and add parsing checks. |

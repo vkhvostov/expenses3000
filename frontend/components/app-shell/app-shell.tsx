@@ -60,9 +60,9 @@ export async function AppShell({
       <aside className="sticky top-0 hidden h-screen w-[272px] shrink-0 flex-col gap-5 border-e border-border bg-card px-4 py-5 lg:flex print:hidden">
         <Link href="/dashboard" className="flex items-center gap-2.5 px-1.5 py-1 font-bold hover:opacity-80">
           <span className="flex size-[34px] items-center justify-center rounded-[9px] bg-primary text-primary-foreground">
-            P
+            E
           </span>
-          <span className="text-lg tracking-[-0.02em]">Poolaki</span>
+          <span className="text-lg tracking-[-0.02em]">expenses3000</span>
         </Link>
 
         <div>

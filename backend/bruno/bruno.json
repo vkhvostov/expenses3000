@@ -1,6 +1,6 @@
 {
   "version": "1",
-  "name": "poolaki-local-api",
+  "name": "expenses3000-local-api",
   "type": "collection",
   "ignore": ["node_modules", ".git"]
 }

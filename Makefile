@@ -24,14 +24,14 @@ $(HOME)/.local/bin/mkcert:
 	mv $@.tmp $@
 
 # "nginx" is the name the frontend container uses to reach the proxy.
-# Without sudo (e.g. 42 computers), skip the system trust store; the certificate is still created.
+# Without sudo, skip the system trust store; the certificate is still created.
 $(CERT): | $(MKCERT)
 	mkdir -p $(CERT_DIR)/ca
 	$(MKCERT) -install || TRUST_STORES=nss $(MKCERT) -install || true
 	$(MKCERT) -cert-file $(CERT) -key-file $(CERT_DIR)/localhost-key.pem localhost 127.0.0.1 ::1 nginx
 	cp "$$($(MKCERT) -CAROOT)/rootCA.pem" $(CERT_DIR)/ca/rootCA.pem
 
-# Start the full evaluation stack, including backups and monitoring.
+# Start the full stack, including backups and monitoring.
 up: $(CERT)
 	$(COMPOSE) up -d
 

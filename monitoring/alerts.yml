@@ -1,6 +1,6 @@
 # Defines Prometheus alerts for backend health, database problems and exporter availability.
 groups:
-  - name: poolaki
+  - name: expenses3000
     rules:
       - alert: BackendDown
         expr: up{job="backend"} == 0

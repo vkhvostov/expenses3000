@@ -34,7 +34,7 @@ Not lazy about: understanding the problem (read it fully and trace the real flow
 
 # Project context
 
-Poolaki, a personal expense tracker (42 Berlin "transcendence"). Two independent npm projects, each with its own lockfile and no workspace, so run npm inside `backend/` or `frontend/`:
+expenses3000, a personal expense tracker. Two independent npm projects, each with its own lockfile and no workspace, so run npm inside `backend/` or `frontend/`:
 
 - `backend/`: Express 5, Drizzle ORM, PostgreSQL 17, TypeScript ESM executed by `tsx`
 - `frontend/`: Next.js 16, React 19, Tailwind CSS 4
